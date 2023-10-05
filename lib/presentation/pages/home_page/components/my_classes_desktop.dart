@@ -11,7 +11,18 @@ class MyClassesDesktop extends StatelessWidget {
         padding: const EdgeInsets.all(32),
         height: 264,
         width: double.infinity,
-        decoration: BoxDecoration(borderRadius: BorderRadius.circular(32), color: Colors.white),
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(32),
+          color: Colors.white,
+          boxShadow: const [
+            BoxShadow(
+              color: Color.fromRGBO(103, 110, 118, 0.16),
+              spreadRadius: 0,
+              blurRadius: 1,
+              // offset: Offset(0, 3), // changes position of shadow
+            ),
+          ],
+        ),
         child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -41,7 +52,7 @@ class MyClassesDesktop extends StatelessWidget {
                     child: const Padding(
                       padding: EdgeInsets.only(left: 32, bottom: 16, top: 16),
                       child: Text(
-                        '''География 7"Б"''',
+                        'География 7 «Б»',
                         style: TextStyle(fontSize: 18, fontWeight: FontWeight.w700),
                       ),
                     )),
@@ -57,7 +68,7 @@ class MyClassesDesktop extends StatelessWidget {
                     child: const Padding(
                       padding: EdgeInsets.only(left: 32, bottom: 16, top: 16),
                       child: Text(
-                        '''Химия 7"Б"''',
+                        'Химия 7 «Б»',
                         style: TextStyle(fontSize: 18, fontWeight: FontWeight.w700),
                       ),
                     )),
@@ -77,7 +88,7 @@ class MyClassesDesktop extends StatelessWidget {
                     child: const Padding(
                       padding: EdgeInsets.only(left: 32, bottom: 16, top: 16),
                       child: Text(
-                        '''Алгебра 7"Б"''',
+                        'Алгебра 7 «Б»',
                         style: TextStyle(fontSize: 18, fontWeight: FontWeight.w700),
                       ),
                     )),
@@ -93,7 +104,7 @@ class MyClassesDesktop extends StatelessWidget {
                     child: const Padding(
                       padding: EdgeInsets.only(left: 32, bottom: 16, top: 16),
                       child: Text(
-                        '''Биология 7"Б"''',
+                        'Биология 7 «Б»',
                         style: TextStyle(fontSize: 18, fontWeight: FontWeight.w700),
                       ),
                     )),
