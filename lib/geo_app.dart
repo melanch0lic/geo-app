@@ -24,6 +24,9 @@ class GeoApp extends StatelessWidget {
             title: 'True Heart',
             debugShowCheckedModeBanner: false,
             theme: ThemeData(
+              listTileTheme: const ListTileThemeData(
+                tileColor: Color.fromRGBO(246, 247, 249, 1),
+              ),
               useMaterial3: true,
             ),
             home: BlocBuilder<AppBloc, AppState>(builder: (context, state) {
