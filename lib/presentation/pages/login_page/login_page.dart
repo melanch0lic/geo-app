@@ -52,8 +52,6 @@ class LoginPage extends StatelessWidget {
                             const SizedBox(height: 8),
                             _LoginButton(),
                             const SizedBox(height: 8),
-                            _GoogleLoginButton(),
-                            const SizedBox(height: 4),
                             _SignUpButton(),
                           ],
                         ),
@@ -99,6 +97,7 @@ class _PasswordInput extends StatelessWidget {
       buildWhen: (previous, current) => previous.password != current.password,
       builder: (context, state) {
         return TextField(
+          onSubmitted: state.isValid ? (_) => context.read<LoginCubit>().logInWithCredentials() : null,
           key: const Key('loginForm_passwordInput_textField'),
           onChanged: (password) => context.read<LoginCubit>().passwordChanged(password),
           obscureText: true,
@@ -133,28 +132,6 @@ class _LoginButton extends StatelessWidget {
                 child: const Text('LOGIN'),
               );
       },
-    );
-  }
-}
-
-class _GoogleLoginButton extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    final theme = Theme.of(context);
-    return ElevatedButton.icon(
-      key: const Key('loginForm_googleLogin_raisedButton'),
-      label: const Text(
-        'SIGN IN WITH GOOGLE',
-        style: TextStyle(color: Colors.white),
-      ),
-      style: ElevatedButton.styleFrom(
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(30),
-        ),
-        backgroundColor: theme.colorScheme.secondary,
-      ),
-      icon: const Icon(Icons.login),
-      onPressed: () => context.read<LoginCubit>().logInWithGoogle(),
     );
   }
 }

@@ -9,7 +9,7 @@ class EmptyRoutePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocListener<AppBloc, AppState>(
+    return BlocConsumer<AppBloc, AppState>(
       listener: (context, state) {
         if (state.status == AppStatus.unauthenticated) {
           Navigator.pushReplacementNamed(context, '/login');
@@ -17,7 +17,7 @@ class EmptyRoutePage extends StatelessWidget {
           Navigator.pushReplacementNamed(context, '/tabs');
         }
       },
-      child: Container(),
+      builder: (context, state) => Container(),
     );
   }
 }

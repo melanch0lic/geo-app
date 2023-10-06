@@ -13,12 +13,10 @@ class AuthRepositoryImplementation implements AuthRepository {
     firebase_auth.FirebaseAuth? firebaseAuth,
     GoogleSignIn? googleSignIn,
   })  : _cache = cache ?? CacheClient(),
-        _firebaseAuth = firebaseAuth ?? firebase_auth.FirebaseAuth.instance,
-        _googleSignIn = googleSignIn ?? GoogleSignIn.standard();
+        _firebaseAuth = firebaseAuth ?? firebase_auth.FirebaseAuth.instance;
 
   final CacheClient _cache;
   final firebase_auth.FirebaseAuth _firebaseAuth;
-  final GoogleSignIn _googleSignIn;
 
   bool isWeb = kIsWeb;
 
@@ -65,36 +63,6 @@ class AuthRepositoryImplementation implements AuthRepository {
       throw SignUpWithEmailAndPasswordFailure.fromCode(e.code);
     } catch (_) {
       throw const SignUpWithEmailAndPasswordFailure();
-    }
-  }
-
-  /// Starts the Sign In with Google Flow.
-  ///
-  /// Throws a [LogInWithGoogleFailure] if an exception occurs.
-  @override
-  Future<void> logInWithGoogle() async {
-    try {
-      late final firebase_auth.AuthCredential credential;
-      if (isWeb) {
-        final googleProvider = firebase_auth.GoogleAuthProvider();
-        final userCredential = await _firebaseAuth.signInWithPopup(
-          googleProvider,
-        );
-        credential = userCredential.credential!;
-      } else {
-        final googleUser = await _googleSignIn.signIn();
-        final googleAuth = await googleUser!.authentication;
-        credential = firebase_auth.GoogleAuthProvider.credential(
-          accessToken: googleAuth.accessToken,
-          idToken: googleAuth.idToken,
-        );
-      }
-
-      await _firebaseAuth.signInWithCredential(credential);
-    } on firebase_auth.FirebaseAuthException catch (e) {
-      throw LogInWithGoogleFailure.fromCode(e.code);
-    } catch (_) {
-      throw const LogInWithGoogleFailure();
     }
   }
 
