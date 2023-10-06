@@ -1,14 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:geo_app/presentation/pages/topic_page/components/text_question.dart';
 
+import 'components/countour_question.dart';
 import 'components/lesson_container.dart';
+import 'state/module.dart';
 
-class TopicPage extends StatelessWidget {
+class TopicPage extends ConsumerWidget {
   final int id;
   const TopicPage({super.key, required this.id});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    final selectedQuestionIndex = ref.watch(selectedQuestionIndexProvider);
     return Scaffold(
       backgroundColor: const Color.fromRGBO(246, 247, 249, 1),
       body: SingleChildScrollView(
@@ -23,7 +27,8 @@ class TopicPage extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const Expanded(flex: 6, child: TextQuestion()),
+                Expanded(
+                    flex: 6, child: selectedQuestionIndex == 3 ? const CountourQuestionWidget() : const TextQuestion()),
                 const SizedBox(width: 34),
                 Expanded(
                     flex: 3,
@@ -62,7 +67,7 @@ class TopicPage extends StatelessWidget {
                             children: [
                               Icon(Icons.play_arrow_outlined),
                               SizedBox(width: 8),
-                              Text('Задание 1. Сопоставь знаки',
+                              Text('Задание 1. Назови страну по описанию',
                                   style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500))
                             ],
                           ),
