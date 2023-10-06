@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../home_page/home_page_desktop/components/current_theme_card_desktop.dart';
+import '../../../home_page/home_page_desktop/components/current_theme_card_desktop.dart';
 
 class CompletedTopicsWidgetDesktop extends StatelessWidget {
   const CompletedTopicsWidgetDesktop({super.key});
