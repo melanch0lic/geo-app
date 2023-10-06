@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:geo_app/presentation/pages/class_detail_page/class_detail_page_mobile/components/completed_topics_widget_mobile.dart';
 import 'package:geo_app/presentation/pages/tabs_page/tabs_page_mobile/components/drawer_mobile.dart';
 
 import '../../../widgets/enter_class_button_mobile.dart';
 import 'components/class_current_theme_widget_mobile.dart';
-import 'components/completed_topics_widget_mobile.dart';
 
 class ClassDetailPageMobile extends StatelessWidget {
   final int id;
@@ -30,9 +30,9 @@ class ClassDetailPageMobile extends StatelessWidget {
                   style: TextStyle(fontSize: 24, fontWeight: FontWeight.w700),
                 ),
                 SizedBox(height: 16),
-                Column(
-                  children: [ClassCurrentThemeWidgetMobile(), SizedBox(height: 12), CompletedTopicsWidgetMobile()],
-                ),
+                ClassCurrentThemeWidgetMobile(),
+                SizedBox(height: 12),
+                CompletedTopicsWidgetMobile(),
               ],
             ),
           ),
