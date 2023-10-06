@@ -46,6 +46,7 @@ dependencies:
   cupertino_icons: ^1.0.2
   flutter_riverpod: ^2.4.2
   simple_circular_progress_bar: ^1.0.2
+  flutter_map: ^5.0.0
 
 dev_dependencies:
   flutter_test:
