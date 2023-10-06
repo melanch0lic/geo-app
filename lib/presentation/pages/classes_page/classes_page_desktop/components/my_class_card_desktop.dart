@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../home_page/home_page_desktop/components/current_theme_card_desktop.dart';
+import '../../../home_page/home_page_desktop/components/current_theme_card_desktop.dart';
 import 'icons_row_widget.dart';
 
 class MyClassCardDesktop extends StatelessWidget {
