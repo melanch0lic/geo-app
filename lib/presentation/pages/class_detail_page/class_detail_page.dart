@@ -4,7 +4,8 @@ import 'components/class_current_theme_widget.dart';
 import 'components/completed_topics_widget_desktop.dart';
 
 class ClassDetailPage extends StatelessWidget {
-  const ClassDetailPage({super.key});
+  final int id;
+  const ClassDetailPage({super.key, required this.id});
 
   @override
   Widget build(BuildContext context) {
