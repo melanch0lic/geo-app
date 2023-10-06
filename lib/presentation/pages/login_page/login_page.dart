@@ -19,6 +19,9 @@ class LoginPage extends StatelessWidget {
         child: BlocListener<LoginCubit, LoginState>(
           listenWhen: (previous, current) => previous.status != current.status,
           listener: (context, state) {
+            if (state.status.isSuccess) {
+              Navigator.pushReplacementNamed(context, '/tabs');
+            }
             if (state.status.isFailure) {
               ScaffoldMessenger.of(context)
                 ..hideCurrentSnackBar()
@@ -149,7 +152,6 @@ class _LoginButton extends StatelessWidget {
 class _SignUpButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final theme = Theme.of(context);
     return TextButton(
       key: const Key('loginForm_createAccount_flatButton'),
       onPressed: () => Navigator.of(context).push(MaterialPageRoute(builder: (context) => const SignUpPage())),

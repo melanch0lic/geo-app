@@ -22,10 +22,7 @@ class TopicPage extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Expanded(
-                  flex: 6,
-                  child: PageView(children: const [TextQuestion()]),
-                ),
+                const Expanded(flex: 6, child: TextQuestion()),
                 const SizedBox(width: 34),
                 Expanded(
                     flex: 3,
