@@ -4,7 +4,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:formz/formz.dart';
 
 import '../../../../data/src/auth_exceptions.dart';
-import '../../../../domain/entities/confirmed_password.dart';
 import '../../../../domain/entities/email.dart';
 import '../../../../domain/entities/password.dart';
 import '../../../../domain/repository/auth_repository.dart';
@@ -26,10 +25,11 @@ class SignUpCubit extends Cubit<SignUpState> {
       state.copyWith(
         email: email,
         isValid: Formz.validate([
-          email,
-          state.password,
-          state.confirmedPassword,
-        ]),
+              email,
+              state.password,
+              //state.confirmedPassword,
+            ]) &&
+            state.fio.isNotEmpty,
       ),
     );
   }
@@ -38,43 +38,40 @@ class SignUpCubit extends Cubit<SignUpState> {
     if (value.isEmpty) {
       emit(state.copyWith(
           password: const Password.pure(),
-          confirmedPassword: state.confirmedPassword.value.isEmpty ? const ConfirmedPassword.pure() : null,
+          // confirmedPassword: state.confirmedPassword.value.isEmpty ? const ConfirmedPassword.pure() : null,
           isValid: false));
       return;
     }
     final password = Password.dirty(value);
-    final confirmedPassword = ConfirmedPassword.dirty(
-      password: password.value,
-      value: state.confirmedPassword.value,
-    );
     emit(
       state.copyWith(
         password: password,
-        confirmedPassword: confirmedPassword,
+        //  confirmedPassword: confirmedPassword,
         isValid: Formz.validate([
-          state.email,
-          password,
-          confirmedPassword,
-        ]),
+              state.email,
+              password,
+            ]) &&
+            state.fio.isNotEmpty,
       ),
     );
   }
 
-  void confirmedPasswordChanged(String value) {
-    final confirmedPassword = ConfirmedPassword.dirty(
-      password: state.password.value,
-      value: value,
-    );
-    emit(
-      state.copyWith(
-        confirmedPassword: confirmedPassword,
-        isValid: Formz.validate([
-          state.email,
-          state.password,
-          confirmedPassword,
-        ]),
-      ),
-    );
+  void fioChanged(String value) {
+    if (value.isEmpty) {
+      emit(state.copyWith(
+          fio: '',
+          // confirmedPassword: state.confirmedPassword.value.isEmpty ? const ConfirmedPassword.pure() : null,
+          isValid: false));
+      return;
+    }
+    emit(state.copyWith(
+      fio: value,
+      isValid: Formz.validate([
+            state.email,
+            state.password,
+          ]) &&
+          state.fio.isNotEmpty,
+    ));
   }
 
   Future<void> signUpFormSubmitted() async {
