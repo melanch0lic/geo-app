@@ -8,14 +8,17 @@ class MyClassCardDesktop extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Expanded(
+    return InkWell(
+      focusColor: Colors.transparent,
+      hoverColor: Colors.transparent,
+      splashColor: Colors.transparent,
+      onTap: () => Navigator.pushNamed(context, '/tabs/class_detail/1'),
       child: Container(
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(32),
           color: Colors.white,
         ),
         padding: const EdgeInsets.all(32),
-        width: double.infinity,
         child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
           const Text('География 7 «Б»', style: TextStyle(fontSize: 24, fontWeight: FontWeight.w700)),
           const SizedBox(height: 24),

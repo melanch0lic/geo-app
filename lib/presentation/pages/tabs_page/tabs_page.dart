@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:geo_app/presentation/pages/tabs_page/state/module.dart';
 import 'package:geo_app/presentation/pages/topic_page/topic_page.dart';
 
+import '../classes_page/classes_page.dart';
 import '../home_page/home_page.dart';
 import 'components/side_menu.dart';
 
@@ -28,7 +29,7 @@ class TabsPage extends StatelessWidget {
                   return PageView(
                     physics: const NeverScrollableScrollPhysics(),
                     controller: controller,
-                    children: const [HomePage(), ClassesPage(),TopicPage()],
+                    children: const [HomePage(), ClassesPage(), TopicPage()],
                   );
                 }),
               ))
