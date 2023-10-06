@@ -1,7 +1,7 @@
 import 'package:fluro/fluro.dart';
-import 'package:geo_app/presentation/pages/class_detail_page/class_detail_page.dart';
 import 'package:geo_app/presentation/pages/topic_page/topic_page.dart';
 
+import '../../presentation/pages/class_detail_page/class_detail_page.dart';
 import '../../presentation/pages/empty_route_page/empty_route_page.dart';
 import '../../presentation/pages/home_page/home_page.dart';
 import '../../presentation/pages/login_page/login_page.dart';
