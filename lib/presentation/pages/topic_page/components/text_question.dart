@@ -20,7 +20,6 @@ class TextQuestion extends StatelessWidget {
         ],
       ),
       padding: const EdgeInsets.all(32),
-      width: double.infinity,
       child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
         const Text('Урок 3. Ориентирование', style: TextStyle(fontSize: 24, fontWeight: FontWeight.w700)),
         const SizedBox(height: 24),
@@ -82,6 +81,7 @@ class TextQuestion extends StatelessWidget {
             ),
           ),
         ),
+        Image.asset('assets/images/compas.png'),
         const SizedBox(height: 42),
         Row(
           children: [

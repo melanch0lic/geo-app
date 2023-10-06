@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:geo_app/presentation/pages/tabs_page/state/module.dart';
 import 'package:geo_app/presentation/pages/tabs_page/tabs_page_mobile/components/drawer_mobile.dart';
-import 'package:geo_app/presentation/pages/topic_page/topic_page.dart';
 
 import '../../classes_page/classes_page.dart';
 import '../../home_page/home_page.dart';
@@ -33,7 +32,7 @@ class TabsPageMobile extends StatelessWidget {
           return PageView(
             physics: const NeverScrollableScrollPhysics(),
             controller: controller,
-            children: const [HomePage(), ClassesPage(), TopicPage()],
+            children: const [HomePage(), ClassesPage()],
           );
         }),
       ),

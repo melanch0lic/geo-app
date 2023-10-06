@@ -25,7 +25,7 @@ class CurrentThemeCard extends StatelessWidget {
                         children: [
                           InkWell(
                             onTap: () {
-                              Navigator.of(context).pushNamed('/tabs/topic_detail/1');
+                              Navigator.of(context).pushNamed('/tabs/topic_detail/2');
                             },
                             child: Container(
                               decoration: BoxDecoration(
