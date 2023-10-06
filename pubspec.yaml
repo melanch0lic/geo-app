@@ -39,6 +39,7 @@ dependencies:
   hive: ^2.2.3
   google_sign_in: ^6.1.5
   formz: ^0.6.0
+  flutter_markdown: ^0.6.15
 
 
   # The following adds the Cupertino Icons font to your application.
