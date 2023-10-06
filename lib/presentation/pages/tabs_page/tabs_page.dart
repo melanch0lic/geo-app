@@ -1,11 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:geo_app/presentation/pages/tabs_page/state/module.dart';
 import 'package:geo_app/presentation/pages/topic_page/topic_page.dart';
 
-import '../../../app_bloc.dart';
-import '../classes_page/classes_page.dart';
 import '../home_page/home_page.dart';
 import 'components/side_menu.dart';
 
@@ -16,8 +13,6 @@ class TabsPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final textTheme = Theme.of(context).textTheme;
-    final user = context.select((AppBloc bloc) => bloc.state.user);
     return Scaffold(
       body: SafeArea(
           child: Row(
