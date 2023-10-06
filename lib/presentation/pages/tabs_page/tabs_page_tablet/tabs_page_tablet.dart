@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:geo_app/presentation/pages/tabs_page/state/module.dart';
 import 'package:geo_app/presentation/pages/tabs_page/tabs_page_mobile/components/drawer_mobile.dart';
-
 import '../../../widgets/enter_class_button_mobile.dart';
 import '../../classes_page/classes_page.dart';
 import '../../home_page/home_page.dart';

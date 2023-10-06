@@ -4,7 +4,8 @@ import 'package:geo_app/presentation/pages/topic_page/components/text_question.d
 import 'components/lesson_container.dart';
 
 class TopicPage extends StatelessWidget {
-  const TopicPage({super.key});
+  final int id;
+  const TopicPage({super.key, required this.id});
 
   @override
   Widget build(BuildContext context) {
@@ -44,18 +45,17 @@ class TopicPage extends StatelessWidget {
                       child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
                         const Text('Уроки', style: TextStyle(fontSize: 24, fontWeight: FontWeight.w700)),
                         const SizedBox(height: 24),
-                        ListView.builder(
-                            physics: const NeverScrollableScrollPhysics(),
-                            shrinkWrap: true,
-                            itemCount: 3,
-                            itemBuilder: (context, index) {
-                              return Column(
-                                children: [
-                                  LessonContainer(lesson: 'Урок 1. Что такое топография?', onTap: () {}),
-                                  const SizedBox(height: 16),
-                                ],
-                              );
-                            }),
+                        ...List.generate(
+                            3,
+                            (index) => Column(
+                                  children: [
+                                    LessonContainer(
+                                      lesson: 'Урок ${index + 1}. Что такое топография?',
+                                      index: index,
+                                    ),
+                                    const SizedBox(height: 16),
+                                  ],
+                                )),
                         const Padding(
                           padding: EdgeInsets.only(left: 24),
                           child: Row(
