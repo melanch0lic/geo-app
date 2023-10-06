@@ -28,9 +28,8 @@ class SideMenu extends StatelessWidget {
                 style: TextStyle(color: Color.fromRGBO(26, 29, 31, 1), fontWeight: FontWeight.bold, fontSize: 24)),
             const Text('Ученик', style: TextStyle(color: Color.fromRGBO(107, 78, 255, 1), fontSize: 18)),
             const SizedBox(height: 32),
-            const DrawerListTile(title: 'Главная', index: 0, icon: Icon(Icons.home)),
+            const DrawerListTile(title: 'Дашборд', index: 0, icon: Icon(Icons.home)),
             const DrawerListTile(title: 'Мои классы', index: 1, icon: Icon(Icons.play_lesson)),
-            const DrawerListTile(title: 'Темы', index: 2, icon: Icon(Icons.topic)),
             const Spacer(),
             SizedBox(
               height: 40,

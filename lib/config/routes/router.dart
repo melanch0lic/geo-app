@@ -1,5 +1,6 @@
 import 'package:fluro/fluro.dart';
 import 'package:geo_app/presentation/pages/class_detail_page/class_detail_page.dart';
+import 'package:geo_app/presentation/pages/topic_page/topic_page.dart';
 
 import '../../presentation/pages/empty_route_page/empty_route_page.dart';
 import '../../presentation/pages/home_page/home_page.dart';
@@ -15,6 +16,7 @@ class CustomRouter {
   static final Handler _loginHandler = Handler(handlerFunc: (context, parameters) => const LoginPage());
   static final Handler _classDetailHandler =
       Handler(handlerFunc: (context, parameters) => ClassDetailPage(id: int.parse(parameters['name']![0])));
+  static final Handler _topicDetailHandler = Handler(handlerFunc: (context, parameters) => const TopicPage());
 
   static void setupRouter() {
     router.define('/', handler: _emptyHandler, transitionType: TransitionType.fadeIn);
@@ -22,5 +24,6 @@ class CustomRouter {
     router.define('/tabs/home', handler: _homeHandler, transitionType: TransitionType.fadeIn);
     router.define('/login', handler: _loginHandler, transitionType: TransitionType.fadeIn);
     router.define('/tabs/class_detail/:name', handler: _classDetailHandler, transitionType: TransitionType.fadeIn);
+    router.define('/tabs/topic_detail/:id', handler: _topicDetailHandler, transitionType: TransitionType.fadeIn);
   }
 }

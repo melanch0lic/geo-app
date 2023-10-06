@@ -44,7 +44,7 @@ class ClassesPage extends StatelessWidget {
                 GridView.builder(
                   itemCount: 6,
                   gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                      crossAxisCount: 3, crossAxisSpacing: 32, mainAxisSpacing: 32, mainAxisExtent: 425),
+                      crossAxisCount: 3, crossAxisSpacing: 32, mainAxisSpacing: 32, mainAxisExtent: 430),
                   shrinkWrap: true,
                   physics: const ScrollPhysics(),
                   itemBuilder: (context, index) {

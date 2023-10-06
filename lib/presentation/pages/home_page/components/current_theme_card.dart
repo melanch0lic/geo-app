@@ -21,7 +21,27 @@ class CurrentThemeCard extends StatelessWidget {
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text(nameTopic, style: const TextStyle(fontSize: 18, fontWeight: FontWeight.w700)),
+                      Row(
+                        children: [
+                          InkWell(
+                            onTap: () {
+                              Navigator.of(context).pushNamed('/tabs/topic_detail/1');
+                            },
+                            child: Container(
+                              decoration: BoxDecoration(
+                                  color: const Color.fromRGBO(107, 78, 255, 1),
+                                  borderRadius: BorderRadius.circular(100)),
+                              width: 32,
+                              height: 32,
+                              child: const Icon(Icons.play_arrow, color: Colors.white),
+                            ),
+                          ),
+                          const SizedBox(
+                            width: 8,
+                          ),
+                          Text(nameTopic, style: const TextStyle(fontSize: 18, fontWeight: FontWeight.w700)),
+                        ],
+                      ),
                       const SizedBox(height: 12),
                       const Text('Мой прогресс', style: TextStyle(fontSize: 14, fontWeight: FontWeight.w500))
                     ],
