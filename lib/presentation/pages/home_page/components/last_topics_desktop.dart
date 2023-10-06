@@ -11,7 +11,7 @@ class LastTopicsDesktop extends StatelessWidget {
         flex: 2,
         child: Container(
             padding: const EdgeInsets.all(32),
-            height: 392,
+            height: 395,
             width: double.infinity,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(32),
