@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import '../state/module.dart';
+import '../../state/module.dart';
 
 class DrawerListTile extends ConsumerWidget {
   const DrawerListTile({super.key, required this.title, required this.index, required this.icon});

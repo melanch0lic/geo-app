@@ -1,15 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:geo_app/presentation/pages/tabs_page/state/module.dart';
+import 'package:geo_app/presentation/pages/topic_page/topic_page.dart';
 
-import '../classes_page/classes_page.dart';
-import '../home_page/home_page.dart';
+import '../../classes_page/classes_page.dart';
+import '../../home_page/home_page.dart';
 import 'components/side_menu.dart';
 
-class TabsPage extends StatelessWidget {
-  const TabsPage({super.key});
+class TabsPageDesktop extends StatelessWidget {
+  const TabsPageDesktop({super.key});
 
-  static Page<void> page() => const MaterialPage<void>(child: TabsPage());
+  static Page<void> page() => const MaterialPage<void>(child: TabsPageDesktop());
 
   @override
   Widget build(BuildContext context) {
@@ -28,7 +29,7 @@ class TabsPage extends StatelessWidget {
                   return PageView(
                     physics: const NeverScrollableScrollPhysics(),
                     controller: controller,
-                    children: const [HomePage(), ClassesPage()],
+                    children: const [HomePage(), ClassesPage(), TopicPage()],
                   );
                 }),
               ))

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'current_theme_card.dart';
+import 'current_theme_card_desktop.dart';
 
 class LastTopicsDesktop extends StatelessWidget {
   const LastTopicsDesktop({super.key});
