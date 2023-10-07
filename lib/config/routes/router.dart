@@ -24,7 +24,7 @@ class CustomRouter {
     router.define('/tabs', handler: _tabsHandler, transitionType: TransitionType.fadeIn);
     router.define('/tabs/home', handler: _homeHandler, transitionType: TransitionType.fadeIn);
     router.define('/login', handler: _loginHandler, transitionType: TransitionType.fadeIn);
-    router.define('/tabs/topic_detail/:name', handler: _topicDetailHandler, transitionType: TransitionType.fadeIn);
+    router.define('/tabs/topic/:name', handler: _topicDetailHandler, transitionType: TransitionType.fadeIn);
     router.define('/tabs/class_detail/:name', handler: _classDetailHandler, transitionType: TransitionType.fadeIn);
   }
 }

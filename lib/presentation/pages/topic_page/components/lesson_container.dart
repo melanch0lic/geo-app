@@ -3,7 +3,8 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:geo_app/presentation/pages/topic_page/state/module.dart';
 
 class LessonContainer extends ConsumerWidget {
-  const LessonContainer({super.key, required this.lesson, required this.index});
+  const LessonContainer({super.key, required this.lesson, required this.index, required this.icon});
+  final Icon icon;
   final int index;
   final String lesson;
   @override
@@ -25,7 +26,7 @@ class LessonContainer extends ConsumerWidget {
             padding: const EdgeInsets.only(left: 32, bottom: 16, top: 16),
             child: Row(
               children: [
-                const Icon(Icons.description_outlined),
+                icon,
                 const SizedBox(width: 8),
                 Text(
                   lesson,

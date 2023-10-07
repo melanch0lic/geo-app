@@ -55,23 +55,31 @@ class TopicPage extends ConsumerWidget {
                             (index) => Column(
                                   children: [
                                     LessonContainer(
+                                      icon: const Icon(Icons.description_outlined),
                                       lesson: 'Урок ${index + 1}. Что такое топография?',
                                       index: index,
                                     ),
                                     const SizedBox(height: 16),
                                   ],
                                 )),
-                        const Padding(
-                          padding: EdgeInsets.only(left: 24),
-                          child: Row(
-                            children: [
-                              Icon(Icons.play_arrow_outlined),
-                              SizedBox(width: 8),
-                              Text('Задание 1. Назови страну по описанию',
-                                  style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500))
-                            ],
-                          ),
-                        )
+                        const LessonContainer(
+                          icon: Icon(Icons.play_arrow_outlined),
+                          lesson: 'Задание 1. Назови страну по описанию',
+                          index: 3,
+                        ),
+                        // InkWell(
+                        //   onTap: () => ref.read(selectedQuestionIndexProvider.notifier).state = 3,
+                        //   child: const Padding(
+                        //     padding: EdgeInsets.only(left: 24),
+                        //     child: Row(
+                        //       children: [
+                        //         SizedBox(width: 8),
+                        //         Text('Задание 1. Назови страну по описанию',
+                        //             style: TextStyle(fontSize: 16, fontWeight: FontWeight.w500))
+                        //       ],
+                        //     ),
+                        //   ),
+                        // )
                       ]),
                     )),
               ],

@@ -13,20 +13,20 @@ class ApiClient {
         {
           'id': 1,
           'name': ['Италия', 'Германия', 'Испания', 'Франция'],
-          'imageUrl': '',
-          'correctName': 'Франция',
+          'image_src': 'assets/icons/FR.svg',
+          'correct_name': 'Франция',
         },
         {
           'id': 2,
           'name': ['Италия', 'Германия', 'Испания', 'Франция'],
-          'imageUrl': 'imageUrl',
-          'correctName': 'Германия',
+          'image_src': 'assets/icons/GR.svg',
+          'correct_name': 'Германия',
         },
         {
           'id': 3,
           'name': ['Италия', 'Германия', 'Испания', 'Франция'],
-          'imageUrl': 'imageUrl',
-          'correctName': 'Италия',
+          'image_src': 'assets/icons/IT.svg',
+          'correct_name': 'Италия',
         }
       ],
       'error': null,

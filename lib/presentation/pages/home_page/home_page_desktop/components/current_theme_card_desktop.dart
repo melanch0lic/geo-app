@@ -12,7 +12,6 @@ class CurrentThemeCard extends StatelessWidget {
           decoration:
               BoxDecoration(borderRadius: BorderRadius.circular(32), color: const Color.fromRGBO(246, 247, 249, 1)),
           padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 24),
-          width: double.infinity,
           child: Column(
             children: [
               Row(
@@ -25,7 +24,7 @@ class CurrentThemeCard extends StatelessWidget {
                         children: [
                           InkWell(
                             onTap: () {
-                              Navigator.of(context).pushNamed('/tabs/topic_detail/2');
+                              Navigator.of(context).pushNamed('/tabs/topic/1');
                             },
                             child: Container(
                               decoration: BoxDecoration(
